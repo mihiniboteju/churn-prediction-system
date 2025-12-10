@@ -1,0 +1,12 @@
+Metric,Value
+Overall Churn Rate,26.5%
+First Year Churn Rate,47.4%
+Loyal Customer Churn Rate (>36m),11.9%
+Avg Tenure (Retained),37.6 months
+Avg Tenure (Churned),18.0 months
+Avg Monthly Charge (Retained),$61.27
+Avg Monthly Charge (Churned),$74.44
+Tenure-TotalCharges Correlation,0.826
+High Risk Customers,826
+High Risk Churn Rate,68.6%
+Potential Annual Revenue at Risk,"$563,492.29"
