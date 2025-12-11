@@ -1,0 +1,27 @@
+feature_name,feature_type,data_type,unique_values,missing_values,phase
+contract_encoded,encoded,int64,3,0,3A
+contract_risk_score,encoded,int64,3,0,3A
+has_internet,encoded,int64,2,0,3A
+is_fiber,encoded,int64,2,0,3A
+is_dsl,encoded,int64,2,0,3A
+payment_Bank transfer (automatic),encoded,bool,2,0,3A
+payment_Credit card (automatic),encoded,bool,2,0,3A
+payment_Electronic check,encoded,bool,2,0,3A
+payment_Mailed check,encoded,bool,2,0,3A
+is_auto_payment,encoded,int64,2,0,3A
+is_electronic_check,encoded,int64,2,0,3A
+OnlineSecurity_binary,encoded,int64,2,0,3A
+OnlineBackup_binary,encoded,int64,2,0,3A
+DeviceProtection_binary,encoded,int64,2,0,3A
+TechSupport_binary,encoded,int64,2,0,3A
+StreamingTV_binary,encoded,int64,2,0,3A
+StreamingMovies_binary,encoded,int64,2,0,3A
+MultipleLines_binary,encoded,int64,2,0,3A
+tenure_group,encoded,category,4,0,3A
+tenure_group_encoded,encoded,int64,4,0,3A
+is_new_customer,encoded,int64,2,0,3A
+price_segment,encoded,category,4,0,3A
+price_segment_encoded,encoded,int64,4,0,3A
+is_high_price,encoded,int64,2,0,3A
+TotalCharges_log,encoded,float64,6531,0,3A
+avg_monthly_spend,encoded,float64,6653,0,3A
