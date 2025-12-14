@@ -1,0 +1,33 @@
+feature,type,range,description
+total_services,count,0-6,Total add-on services subscribed
+security_services_count,count,0-4,Security-related services count
+entertainment_services_count,count,0-2,Streaming services count
+has_any_services,binary,0-1,Has at least one add-on service
+is_fully_engaged,binary,0-1,Subscribed to all 6 add-ons
+has_security_bundle,binary,0-1,Has OnlineSecurity + OnlineBackup
+has_premium_protection,binary,0-1,Has all 4 security services
+has_security_gap,binary,0-1,Has internet but no security services
+has_partial_security,binary,0-1,Has 1-2 security services (incomplete)
+is_likely_household,binary,0-1,Has partner OR dependents
+family_size_indicator,ordinal,0-2,"0=single, 1=couple, 2=family"
+is_heavy_streaming,binary,0-1,Has both TV and Movies streaming
+projected_24m_value,continuous,currency,MonthlyCharges × 24 months
+revenue_per_month,continuous,currency,TotalCharges / tenure
+loyalty_value_score,continuous,score,tenure × avg_monthly_spend
+mtm_new_customer,interaction,0-1,MTM contract + new customer (high risk)
+mtm_mid_tenure,interaction,0-1,MTM contract + mid-tenure customer
+long_contract_loyal,interaction,0-1,2-year contract + loyal customer (low risk)
+fiber_mtm_risk,interaction,0-1,Fiber + MTM contract (42% churn)
+fiber_long_contract,interaction,0-1,Fiber + 2-year contract
+high_price_no_services,interaction,0-1,High price but no add-ons (poor value)
+high_price_full_services,interaction,0-1,High price with all services (premium)
+new_customer_high_price,interaction,0-1,New customer paying premium
+echeck_no_autopay,interaction,0-1,E-check without autopay (45% churn)
+paperless_no_autopay,interaction,0-1,Paperless billing without autopay
+senior_no_support,interaction,0-1,Senior without TechSupport (vulnerable)
+single_minimal_services,interaction,0-1,Single customer with minimal services
+is_flight_risk,risk_flag,0-1,3+ high-risk factors present
+is_value_at_risk,risk_flag,0-1,High CLV + flight risk
+needs_retention,risk_flag,0-1,MTM mid-tenure customers
+upsell_opportunity,risk_flag,0-1,"Long tenure, low services"
+premium_retention_target,risk_flag,0-1,"High value, low risk, 2-year contract"
