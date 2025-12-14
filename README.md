@@ -182,7 +182,7 @@ jupyter>=1.0.0
 **Mihini Boteju**
 
 - GitHub: [@mihiniboteju](https://github.com/mihiniboteju)
-- LinkedIn: [Connect with me](https://linkedin.com/in/mihiniboteju)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/mihini-boteju)
 
 ---
 
