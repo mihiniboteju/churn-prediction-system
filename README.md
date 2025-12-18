@@ -7,7 +7,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.29.0-FF4B4B.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Live Demo:** [https://churn-insight-analytics.streamlit.app](https://churn-prediction-telcom.streamlit.app/) *(Coming Soon)*
+**Live Demo:** [[https://churn-insight-analytics.streamlit.app](https://churn-prediction-telcom.streamlit.app)](https://churn-prediction-telcom.streamlit.app/) *(Coming Soon)*
 
 ---
 
