@@ -161,7 +161,7 @@ with col1:
 
 with col2:
     st.markdown(""" ### Continued... **Phase 4: Customer Segmentation** - Applied K-Means clustering
-    - Identified 4 distinct customer segments
+    - Identified 2 distinct customer segments
     - Developed targeted retention strategies **Phase 5: Predictive Modeling** - Removed multicollinearity (VIF analysis)
     - Trained 3 ML models
     - Selected best model: **Logistic Regression** - Achieved **80.41% accuracy** """)
@@ -175,27 +175,31 @@ metrics_col1, metrics_col2, metrics_col3, metrics_col4 = st.columns(4)
 
 with metrics_col1:
     st.metric(
-        label=" Overall Accuracy",
+        label="Overall Accuracy",
         value="80.41%",
-        help="Percentage of all predictions that were correct" )
+        help="Percentage of all predictions that were correct"
+    )
 
 with metrics_col2:
     st.metric(
-        label=" Recall (Sensitivity)",
+        label="Recall (Sensitivity)",
         value="53.21%",
-        help="Successfully identified 199 out of 374 actual churners" )
+        help="Successfully identified 199 out of 374 actual churners"
+    )
 
 with metrics_col3:
     st.metric(
-        label=" ROC-AUC Score",
+        label="ROC-AUC Score",
         value="84.34%",
-        help="Excellent ability to distinguish churners from non-churners" )
+        help="Excellent ability to distinguish churners from non-churners"
+    )
 
 with metrics_col4:
     st.metric(
-        label=" Precision",
-        value="61.23%",
-        help="When model predicts churn, it's correct 61% of the time" )
+        label="Precision",
+        value="66.33%",
+        help="When model predicts churn, it's correct 66% of the time"
+    )
 
 # Business Value
 st.markdown("---")
@@ -230,7 +234,7 @@ st.markdown("## Explore More")
 
 st.info(""" **Continue your journey:**
 - **Data Story**: See detailed exploratory analysis and patterns
-- **Customer Segments**: Discover the 4 types of customers and retention strategies
+- **Customer Segments**: Discover the 2 customer segments and retention strategies
 - **Model Performance**: Deep dive into model metrics and evaluation
 - **Try It Yourself**: Use the live prediction tool!
 """)

@@ -79,47 +79,67 @@ lr_metrics = metrics_df[metrics_df['Model'] == 'Logistic Regression'].iloc[0]
 
 with metric_col1:
     st.metric(
-        " Accuracy",
+        "Accuracy",
         f"{lr_metrics['Accuracy']*100:.2f}%",
-        help="Overall correctness: (TP + TN) / Total" )
+        help="Overall correctness: (TP + TN) / Total"
+    )
 
 with metric_col2:
     st.metric(
-        " Precision",
+        "Precision",
         f"{lr_metrics['Precision']*100:.2f}%",
-        help="When we predict churn, we're right 66% of the time" )
+        help="When we predict churn, we're right 66% of the time"
+    )
 
 with metric_col3:
     st.metric(
-        " Recall",
+        "Recall",
         f"{lr_metrics['Recall']*100:.2f}%",
-        help="We catch 53% of customers who actually churn" )
+        help="We catch 53% of customers who actually churn"
+    )
 
 with metric_col4:
     st.metric(
-        " F1-Score",
+        "F1-Score",
         f"{lr_metrics['F1-Score']*100:.2f}%",
-        help="Harmonic mean of Precision and Recall" )
+        help="Harmonic mean of Precision and Recall"
+    )
 
 with metric_col5:
     st.metric(
-        " ROC-AUC",
+        "ROC-AUC",
         f"{lr_metrics['ROC-AUC']*100:.2f}%",
-        help="Excellent ability to distinguish churners" )
+        help="Excellent ability to distinguish churners"
+    )
 
 # Metrics explanation tabs
 st.markdown("---")
 st.markdown("### Understanding the Metrics")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([" Accuracy", " Precision", " Recall", " F1-Score", " ROC-AUC"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC"])
 
 with tab1:
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown(""" ### Accuracy: Overall Correctness **Definition:**Percentage of all predictions that were correct. **Formula:** `(True Positives + True Negatives) / Total Predictions` **Our Score:** 80.41% **What it means:** - Out of 1,409 customers, we correctly classified 1,133
-        - 276 predictions were wrong **Interpretation:** - **Good**: Above 80% is solid performance
-        - **Reliable**: 4 out of 5 predictions are correct
-        - **Note**: Can be misleading with imbalanced data (26.5% churn rate)
+        st.markdown("""
+        ### Accuracy: Overall Correctness
+        
+        **Definition:** Percentage of all predictions that were correct.
+        
+        **Formula:** `(True Positives + True Negatives) / Total Predictions`
+        
+        **Our Score:** 80.41%
+        
+        **What it means:**
+        
+        - Out of 1,409 customers, we correctly classified 1,133
+        - 276 predictions were wrong
+        
+        **Interpretation:**
+        
+        - **Good:** Above 80% is solid performance
+        - **Reliable:** 4 out of 5 predictions are correct
+        - **Note:** Can be misleading with imbalanced data (26.5% churn rate)
         """)
     
     with col2:
@@ -150,10 +170,27 @@ with tab1:
 with tab2:
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown(""" ### Precision: Prediction Confidence **Definition:**When we predict "Churn", how often are we correct? **Formula:** `True Positives / (True Positives + False Positives)` **Our Score:** 66.33% **What it means:** - When model predicts a customer will churn, it's correct 66% of the time
-        - 34% of "will churn" predictions are false alarms **Business Impact:** - Affects cost of retention campaigns
+        st.markdown("""
+        ### Precision: Prediction Confidence
+        
+        **Definition:** When we predict "Churn", how often are we correct?
+        
+        **Formula:** `True Positives / (True Positives + False Positives)`
+        
+        **Our Score:** 66.33%
+        
+        **What it means:**
+        
+        - When model predicts a customer will churn, it's correct 66% of the time
+        - 34% of "will churn" predictions are false alarms
+        
+        **Business Impact:**
+        
+        - Affects cost of retention campaigns
         - Higher precision = less wasted effort on happy customers
-        - Trade-off: Higher precision often means lower recall **Our Case:** 66% is acceptable - we'd rather catch more churners (higher recall) 
+        - Trade-off: Higher precision often means lower recall
+        
+        **Our Case:** 66% is acceptable - we'd rather catch more churners (higher recall) 
         even if some predictions are false positives.
         """)
     
@@ -180,10 +217,29 @@ with tab2:
 with tab3:
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown(""" ### Recall: Catching Actual Churners **Definition:**Of all customers who actually churned, how many did we catch? **Formula:** `True Positives / (True Positives + False Negatives)` **Our Score:** 53.21% **What it means:** - Out of 374 customers who churned, we identified 199
-        - We missed 175 churners (False Negatives) **Business Impact:** - **MOST IMPORTANT METRIC** for churn prediction
+        st.markdown("""
+        ### Recall: Catching Actual Churners
+        
+        **Definition:** Of all customers who actually churned, how many did we catch?
+        
+        **Formula:** `True Positives / (True Positives + False Negatives)`
+        
+        **Our Score:** 53.21%
+        
+        **What it means:**
+        
+        - Out of 374 customers who churned, we identified 199
+        - We missed 175 churners (False Negatives)
+        
+        **Business Impact:**
+        
+        - **MOST IMPORTANT METRIC** for churn prediction
         - Missing a churner means lost revenue
-        - False Negatives are expensive! **Why 53% is acceptable:** - Baseline (random): ~27% (matching churn rate)
+        - False Negatives are expensive!
+        
+        **Why 53% is acceptable:**
+        
+        - Baseline (random): ~27% (matching churn rate)
         - We're 2x better than random
         - Identifying 199 at-risk customers is valuable
         - Room for improvement in future iterations
@@ -223,11 +279,30 @@ with tab3:
 with tab4:
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown(""" ### F1-Score: Balanced Performance **Definition:**Harmonic mean of Precision and Recall. **Formula:** `2 × (Precision × Recall) / (Precision + Recall)` **Our Score:** 59.05% **What it means:** - Balances Precision (66%) and Recall (53%)
+        st.markdown("""
+        ### F1-Score: Balanced Performance
+        
+        **Definition:** Harmonic mean of Precision and Recall.
+        
+        **Formula:** `2 × (Precision × Recall) / (Precision + Recall)`
+        
+        **Our Score:** 59.05%
+        
+        **What it means:**
+        
+        - Balances Precision (66%) and Recall (53%)
         - Single metric to compare models
-        - Useful when both false positives and false negatives matter **Why use harmonic mean?** - Punishes extreme imbalances
+        - Useful when both false positives and false negatives matter
+        
+        **Why use harmonic mean?**
+        
+        - Punishes extreme imbalances
         - If either Precision or Recall is low, F1 will be low
-        - Better than arithmetic mean for classification **Our Interpretation:** - 59% F1 shows reasonable balance
+        - Better than arithmetic mean for classification
+        
+        **Our Interpretation:**
+        
+        - 59% F1 shows reasonable balance
         - Model doesn't over-optimize for one metric
         - Suitable for production deployment
         """)
@@ -258,15 +333,35 @@ with tab4:
 with tab5:
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown(""" ### ROC-AUC: Discriminative Ability **Definition:**Area Under the Receiver Operating Characteristic Curve. **Our Score:** 84.34% **What it means:** - Measures model's ability to distinguish between churners and non-churners
-        - Score of 84% is **EXCELLENT** - Interpretation scale:
-          - 90-100%: Excellent
-          - 80-90%: Very Good (← We're here!)
-          - 70-80%: Good
-          - 60-70%: Fair
-          - 50%: No better than random **Why it's important:** - Threshold-independent: Works at any decision boundary
+        st.markdown("""
+        ### ROC-AUC: Discriminative Ability
+        
+        **Definition:** Area Under the Receiver Operating Characteristic Curve.
+        
+        **Our Score:** 84.34%
+        
+        **What it means:**
+        
+        - Measures model's ability to distinguish between churners and non-churners
+        - Score of 84% is **EXCELLENT**
+        
+        **Interpretation scale:**
+        
+        - 90-100%: Excellent
+        - 80-90%: Very Good (← We're here!)
+        - 70-80%: Good
+        - 60-70%: Fair
+        - 50%: No better than random
+        
+        **Why it's important:**
+        
+        - Threshold-independent: Works at any decision boundary
         - Robust to class imbalance
-        - Shows overall model quality **Business Meaning:** - 84% chance that model ranks a random churner higher than a random non-churner
+        - Shows overall model quality
+        
+        **Business Meaning:**
+        
+        - 84% chance that model ranks a random churner higher than a random non-churner
         - Strong confidence in model's predictions
         - Suitable for ranking customers by churn risk
         """)
