@@ -55,7 +55,7 @@ A comprehensive churn prediction system that analyzes 7,043 telecom customers to
 
 ## Dataset
 
-- **Source**: Telecom customer database (7,043 customers)
+- **Source**: Telecom customer database (7,043 customers) [[https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv](https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv)]
 - **Features**: 21 original → 79 engineered → 37 optimized (after VIF)
 - **Target**: Binary classification (Churn: 26.5% | Retained: 73.5%)
 - **Train/Test Split**: 5,634 training, 1,409 test samples (stratified 80/20)
