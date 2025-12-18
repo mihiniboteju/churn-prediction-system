@@ -65,7 +65,7 @@ with col2:
     st.markdown(""" **Project Highlights:** - 7,043 customers analyzed
     - 37 engineered features
     - 3 ML models compared
-    - 4 customer segments identified
+    - 2 customer segments identified
     - Interactive prediction tool
     """)
     st.markdown('</div>', unsafe_allow_html=True)
@@ -116,7 +116,7 @@ with col1:
 
 with col2:
     st.markdown(""" **The Solution:** - Predict which customers are likely to leave
-    - Identify **4 distinct customer segments** for targeted campaigns
+    - Identify **2 distinct customer segments** for targeted campaigns
     - Prioritize retention efforts on high-risk customers
     - Achieve **80% accuracy** in predictions
     """)
